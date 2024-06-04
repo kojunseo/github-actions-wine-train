@@ -9,7 +9,7 @@ jobs:
       - uses: iterative/setup-cml@v1
       - name: Train model
         env:
-          REPO_TOKEN: ${{ secrets.TOKEN }}
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip install -r requirements.txt
           python train.py
@@ -20,4 +20,4 @@ jobs:
           echo "## Data viz" >> report.md
           cml-publish feature_importance.png --md >> report.md
           cml-publish residuals.png --md >> report.md
-          cml-send-comment report.md
+          cml comment create report.md
