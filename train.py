@@ -1,9 +1,9 @@
 import pandas as pd 
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+from sklearn.ensemble import RandomForestRegressor
 # Set random seed
 seed = 42
 
@@ -12,7 +12,7 @@ seed = 42
 ################################
 
 # Load in the data
-df = pd.read_csv("winequality-red.csv")
+df = pd.read_csv("wine_quality-red.csv")
 
 # Split into train and test sections
 y = df.pop("quality")
